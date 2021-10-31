@@ -6,6 +6,9 @@ namespace QxLaunch.ViewModels
 {
     public class MainWindowViewModel : ViewModelBase
     {
-        public string Greeting => "Welcome to Avalonia!";
+        public void ShowOptions()
+        {
+            Console.WriteLine("");
+        }
     }
 }
