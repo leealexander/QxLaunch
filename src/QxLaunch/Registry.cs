@@ -11,9 +11,17 @@ namespace QxLaunch
     {
         public static IServiceProvider Initialise()
         {
-            var serviceCollection = new ServiceCollection();
+            var services = new ServiceCollection();
 
-            return serviceCollection.BuildServiceProvider();
+
+            services.Scan(scan =>
+            {
+                scan.FromCallingAssembly().AddClasses().AsMatchingInterface();
+                scan.FromCallingAssembly().AddClasses();
+            });
+
+
+            return services.BuildServiceProvider();
         }
     }
 }

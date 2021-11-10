@@ -8,5 +8,6 @@ namespace QxLaunch.AppExplorer
 {
     public interface IAppExplorer
     {
+        public IAsyncEnumerable<IAppDetails> GetAppsAsync();
     }
 }
